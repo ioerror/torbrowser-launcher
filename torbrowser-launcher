@@ -24,7 +24,7 @@ class TorBrowserLauncher:
 
         if installed_tbb_version == current_tbb_version:
           # current version is tbb is installed, launch it
-          self.run(False)
+          self.run(False) # XXX: This assumes the file was executable but this assumption is implicit
           launch_gui = False
         elif installed_tbb_version < self.current_tbb_version:
           # there is a tbb upgrade available
@@ -247,7 +247,7 @@ class TorBrowserLauncher:
     self.progressbar.show()
 
     # start the download
-    self.dl_response = urllib2.urlopen(url);
+    self.dl_response = urllib2.urlopen(url); # XXX SSL/TLS MITM
     self.dl_total_size = self.dl_response.info().getheader('Content-Length').strip()
     self.dl_total_size = int(self.dl_total_size)
     self.dl_bytes_so_far = 0
