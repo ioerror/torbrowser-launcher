@@ -10,6 +10,9 @@ rm -rf $GPG_TMP_DIR
 mkdir -p $GPG_TMP_DIR
 chmod 700 $GPG_TMP_DIR
 
+# XXX: Wouldn't it be better to have a system wide processed GnuPG trust db
+#      and then the user's account won't, say, accidentally subvert the trusted
+#      directory or even need to initalize anything?
 # import erinn's public key
 gpg --homedir $GPG_TMP_DIR --import /usr/share/torbrowser-launcher/erinn.asc
 
