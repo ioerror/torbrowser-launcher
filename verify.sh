@@ -1,6 +1,7 @@
 #!/bin/sh
 # usage: verify.sh [temporary gpg directory] [tor-browser-gnu-linux-xxx.tar.gz.asc]
 
+# XXX: What happens if these are empty or say, not the expected value? o_0
 GPG_TMP_DIR=$1
 TBB_SIG=$2
 
